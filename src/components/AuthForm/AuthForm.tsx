@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import type { GreenApiCredentials } from '../../types/green-api';
 import './AuthForm.scss';
 

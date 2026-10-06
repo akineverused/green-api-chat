@@ -1,4 +1,4 @@
-import { useState, FormEvent, useRef, useEffect, useCallback } from 'react';
+import { useState, type FormEvent, useRef, useEffect, useCallback } from 'react';
 import type { GreenApiCredentials, ChatMessage } from '../../types/green-api';
 import { sendMessage } from '../../api/greenApi';
 import { useGreenApiPolling } from '../../hooks/useGreenApiPolling';
