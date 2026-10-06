@@ -1,0 +1,224 @@
+@use '../../styles/variables' as *;
+
+.chat-start-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $bg-app;
+}
+
+.chat-start-card {
+  background-color: $white;
+  padding: 2rem;
+  border-radius: $radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      font-size: 1.25rem;
+      color: $text-primary;
+    }
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+
+    label {
+      font-size: 0.85rem;
+      color: $text-secondary;
+      margin-bottom: 0.35rem;
+    }
+
+    input {
+      padding: 0.75rem;
+      border: 1px solid $border-color;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+}
+
+.secondary-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+
+  &:hover {
+    background-color: rgba(0, 168, 132, 0.1);
+  }
+}
+
+.logout-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  border: 1px solid #ea4335;
+  color: #ea4335;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+
+  &:hover {
+    background-color: rgba(234, 67, 53, 0.1);
+  }
+}
+
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: $chat-bg;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background-color: $panel-bg;
+  border-bottom: 1px solid $border-color;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .avatar {
+      font-size: 1.5rem;
+      background: #e9edef;
+      padding: 0.4rem;
+      border-radius: 50%;
+    }
+
+    .phone-number {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .status {
+      font-size: 0.75rem;
+      color: $text-secondary;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .empty-chat-hint {
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 1.25rem;
+    border-radius: $radius;
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+}
+
+.message-bubble {
+  max-width: 65%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  position: relative;
+  word-break: break-word;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+
+  &--outgoing {
+    align-self: flex-end;
+    background-color: $message-out;
+  }
+
+  &--incoming {
+    align-self: flex-start;
+    background-color: $message-in;
+  }
+
+  &__time {
+    font-size: 0.68rem;
+    color: $text-secondary;
+    text-align: right;
+    margin-top: 0.2rem;
+  }
+}
+
+.message-input-bar {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background-color: $panel-bg;
+
+  input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+
+    &:disabled {
+      background-color: #f0f0f0;
+    }
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
